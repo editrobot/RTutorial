@@ -1,7 +1,7 @@
 # RTutorial
 this is RTutorial
 
-[day1](day1 "/day1")
+[day1 csv文件操作](day1 "/day1")
 
 ## 其他 ##
 
@@ -12,6 +12,10 @@ json包
 	json_data <- fromJSON(paste(readLines("json.txt"),collapse=""))
 	print(json_data)
 
+
+查询文件"input.csv"的信息
+
+	file.info("input.csv")
 
 获取脚本当前目录
 
