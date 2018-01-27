@@ -1,0 +1,69 @@
+data <- read.csv("input1.csv")
+#打印最高薪水
+print("sal <- max(data$salary)")
+sal <- max(data$salary)
+print(sal)
+print("----------------------------")
+#打印薪水等于最高薪水的员工信息
+print("retval <- subset(data, salary == max(salary))")
+retval <- subset(data, salary == max(salary))
+print(retval)
+print("----------------------------")
+#打印部门等于IT的员工信息
+print("retval <- subset( data, dept == 'IT')")
+retval <- subset( data, dept == 'IT')
+print(retval)
+print("----------------------------")
+#打印薪水大于600并且部门在IT的员工信息
+print("info <- subset(data, salary > 600 & dept == 'IT')")
+info <- subset(data, salary > 600 & dept == 'IT')
+print(info)
+print("----------------------------")
+#打印日期大于2014-1-1号的员工信息
+print("retval <- subset(data, as.Date(start_date) > as.Date('2014-01-01'))")
+retval <- subset(data, as.Date(start_date) > as.Date('2014-01-01'))
+print(retval)
+print("----------------------------")
+#subset的说明
+Usage
+
+subset(x, ...)
+
+## Default S3 method:
+subset(x, subset, ...)
+
+## S3 method for class 'matrix'
+subset(x, subset, select, drop = FALSE, ...)
+
+## S3 method for class 'data.frame'
+subset(x, subset, select, drop = FALSE, ...)
+Arguments
+
+x	
+object to be subsetted.
+
+subset	
+logical expression indicating elements or rows to keep: missing values are taken as false.
+
+select	
+expression, indicating columns to select from a data frame.
+
+drop	
+passed on to [ indexing operator.
+
+...	
+further arguments to be passed to or from other methods.
+Examples
+
+subset(airquality, Temp > 80, select = c(Ozone, Temp))
+subset(airquality, Day == 1, select = -Temp)
+subset(airquality, select = Ozone:Wind)
+
+with(airquality, subset(Ozone, Temp > 80))
+
+## sometimes requiring a logical 'subset' argument is a nuisance
+nm <- rownames(state.x77)
+start_with_M <- nm %in% grep("^M", nm, value = TRUE)
+subset(state.x77, start_with_M, Illiteracy:Murder)
+# but in recent versions of R this can simply be
+subset(state.x77, grepl("^M", nm), Illiteracy:Murder)

@@ -165,7 +165,7 @@
 
     data <- read.csv("input1.csv")
 
-	print("sal <- max(data$salary):")
+	print("sal <- max(data$salary)")
 	sal <- max(data$salary)
 	print(sal)
 	print("----------------------------")
