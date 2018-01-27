@@ -2,8 +2,7 @@
 
 看完本课后，你将会学到：
 
-1. 使用R语言，从 **csv文件** 读取数据。
-2. 然后将 R语言中的 **数据** 写入 **csv文件** 中。 
+使用R语言，从 **csv文件** 读取数据。
 
 
 # 实验开始 #
@@ -166,8 +165,30 @@
 
     data <- read.csv("input1.csv")
 
+	print("sal <- max(data$salary):")
 	sal <- max(data$salary)
 	print(sal)
+	print("----------------------------")
+	
+	print("retval <- subset(data, salary == max(salary))")
+	retval <- subset(data, salary == max(salary))
+	print(retval)
+	print("----------------------------")
+	
+	print("retval <- subset( data, dept == 'IT')")
+	retval <- subset( data, dept == 'IT')
+	print(retval)
+	print("----------------------------")
+	
+	print("info <- subset(data, salary > 600 & dept == 'IT')")
+	info <- subset(data, salary > 600 & dept == 'IT')
+	print(info)
+	print("----------------------------")
+	
+	print("retval <- subset(data, as.Date(start_date) > as.Date('2014-01-01'))")
+	retval <- subset(data, as.Date(start_date) > as.Date('2014-01-01'))
+	print(retval)
+	print("----------------------------")
 
 
 ----------
@@ -197,16 +218,7 @@
 
 **第十五步：**
 
-分析代码：
-
-    data <- read.csv("input1.csv")
-
-	sal <- max(data$salary)
-	print(sal)
-
-`max` 是 **最大** 的意思, 所以 `sal <- max(data$salary)`  的意思是：在 salary 这一列中，如果全是数字，就在这些数字中找出最大的数字出来。并存到一个叫 `sal` 的变量中。
-
-![](img/15.jpg)
+做作业，根据**第十二步**开始，研究那些代码是怎么回事。可以自己亲自操作一遍。
 
 ----------
 
