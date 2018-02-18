@@ -28,13 +28,16 @@ assign("k",31)
 assign("l",37)
 
 countf<-function(item1,item2){
-count1 = 1
-for(x in item1){
-	count1 = count1*get(x)}
-count2 = 1
-for(x in item2){
-	count2 = count2*get(x)}
-print(count1/count2)}
+     count1 = 1
+     for(x in item1){
+	      count1 = count1*get(x)
+	    }
+     count2 = 1
+     for(x in item2){
+	      count2 = count2*get(x)
+	    }
+    print(count1/count2)
+	}
 countf(jsondata$data1,jsondata$data2)
 
 # 作业：
