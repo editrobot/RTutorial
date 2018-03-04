@@ -15,16 +15,19 @@ jsondata = readJsonFile("data.json")
 class(jsondata)
 #取出速度
 teamspeed<-function(data){
-teamspd<-lapply(data,function(item){print(item$speed)})
-teamspeed<-as.numeric(teamspd)}
+    teamspd<-lapply(data,function(item){print(item$speed)})
+    teamspeed<-as.numeric(teamspd)
+}
 #求方差和标准差
 varspeed<-function(data){
-varstart=0
-for(i in 1:length(data)){
-varstart=(data[i]-mean(data))^2+varstart}
-varteam=varstart/length(data)
-stdteam=sqrt(varteam)
-return(list(varteam,stdteam))}
+    varstart=0
+    for(i in 1:length(data)){
+        varstart=(data[i]-mean(data))^2+varstart
+	}
+    varteam=varstart/length(data)
+    stdteam=sqrt(varteam)
+    return(list(varteam,stdteam))
+}
 #最终
 team1speed<-teamspeed(jsondata$team1)
 print(varspeed(team1speed))
