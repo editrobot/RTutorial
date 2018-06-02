@@ -349,8 +349,4 @@ https://github.com/editrobot/LanMaoData
 ----------
 
 
-## 四：基础语法 ##
-
-这一小节主要是先介绍一些 python 的基础语法，后面要用来开发网络爬虫的功能。
-
 未完待续......
