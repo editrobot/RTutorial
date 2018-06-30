@@ -12,6 +12,10 @@ readJsonFile <- function(path){
 }
 
 jsondata = readJsonFile("data.json")
+# 创建一个写文件的函数
+writeJsonFile <- function(path,data){
+	cat(toJSON(data), file = getDataPath(path))
+}
 class(jsondata)
 #取出速度
 teamspeed<-function(data){
@@ -30,10 +34,10 @@ varspeed<-function(data){
 }
 #最终
 team1speed<-teamspeed(jsondata$team1)
-print(varspeed(team1speed))
+a<-as.numeric(print(varspeed(team1speed)))
 team2speed<-teamspeed(jsondata$team2)
 print(varspeed(team2speed))
-
+writeJsonFile(result.json,a)
 
 #team1speed<-lapply(jsondata$team1,function(item){print(item$speed)})
 #team2speed<-lapply(jsondata$team2,function(item){print(item$speed)})
